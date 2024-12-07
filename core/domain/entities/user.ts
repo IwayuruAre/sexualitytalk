@@ -40,7 +40,7 @@ export class User {
     }
 
     get birth(): Date {
-        return this.birth;
+        return this._birth;
     }
 
     get chatRooms(): string[] {
@@ -52,7 +52,7 @@ export class User {
     }
 
     get name(): string {
-        return this.name;
+        return this._name;
     }
 
     get photos(): string[] {
