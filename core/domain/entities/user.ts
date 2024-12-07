@@ -36,7 +36,7 @@ export class User {
     }
 
     get id(): string {
-        return this.id;
+        return this._id;
     }
 
     get birth(): Date {
