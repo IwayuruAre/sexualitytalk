@@ -5,7 +5,7 @@ import { UserConverter } from "@/infrastructure/repositories/userConverter"
 
 export class FirestoreUserReposiroty {
 
-    public async findUserById(userId: string): Promise<User | null> {
+    public async findById(userId: string): Promise<User | null> {
         const userRef = doc(db, "users", userId);
         const userSnap = await getDoc(userRef);
         if (userSnap.exists()) {
