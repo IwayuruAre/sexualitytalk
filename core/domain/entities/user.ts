@@ -33,6 +33,7 @@ export class User {
         this._profile = options?.profile || "";
         this._createdAt = options?.createdAt || null;
         this._updatedAt = options?.updatedAt || null;
+        this.validate();
     }
 
     get id(): string {
@@ -110,5 +111,34 @@ export class User {
     public updatePhotos(photos: string[]): void {
         this._photos = photos;
     }
+
+    public updateCreatedAt(cretaedAt: Date) {
+        this._createdAt = cretaedAt;
+    }
+
+    public updateUpdatedAt(updatedAt: Date) {
+        this._updatedAt = updatedAt;
+    }
     //#endregion  編集可能フィールド
+
+    private validate(): void {
+        if (this.id === "") {
+            throw new Error("id is required");
+        }
+        if (this.name === "") {
+            throw new Error("name is required");
+        }
+        if (this.sex === "") {
+            throw new Error("sex is required");
+        }
+        if (this.prefecture === "") {
+            throw new Error("prefecture is required");
+        }
+        if (this.lgbt.length === 0) {
+            throw new Error("lgbt is required");
+        }
+        if (this.age < 18 || this.age > 100) {
+            throw new Error("age must be between 18 and 100");
+        }
+    }
 }
