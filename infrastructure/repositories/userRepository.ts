@@ -17,8 +17,8 @@ export class UserRepository implements IUserRepository {
         return this.firestoreUserReposiroty.findById(userId);
     }
 
-    public save(user: User): Promise<void> {
-        return this.firestoreUserReposiroty.save(user);
+    public update(userId: string, updateFields: Partial<Record<keyof User, unknown>>): Promise<void> {
+        return this.firestoreUserReposiroty.update(userId, updateFields);
     }
 
 }

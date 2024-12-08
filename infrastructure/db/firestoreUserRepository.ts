@@ -25,14 +25,11 @@ export class FirestoreUserReposiroty {
         }
     }
 
-    public async save(user: User): Promise<void> {
-        const userRef = doc(db, "users", user.id);
+    public async update(userId: string, updateFields: Partial<Record<keyof User, unknown>>): Promise<void> {
+        const userRef = doc(db, "users", userId);
         try {
             await updateDoc(userRef, {
-                chat_rooms: user.chatRooms,
-                lgbt: user.lgbt,
-                photos: user.photos,
-                profile: user.profile,
+                ...updateFields,
                 updated_at: serverTimestamp()
             });
         } catch (err) {
