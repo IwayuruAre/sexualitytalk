@@ -1,5 +1,5 @@
 import { db } from "@/firebase";
-import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc, serverTimestamp, collection } from "firebase/firestore";
 import { User } from "@/core/domain/entities/user";
 import { UserConverter } from "@/infrastructure/repositories/userConverter"
 
@@ -12,6 +12,16 @@ export class FirestoreUserReposiroty {
             return UserConverter.fromFirestore(userSnap);
         } else {
             return null;
+        }
+    }
+
+    public async create(user: User): Promise<void> {
+        const userRef = doc(db, "users", user.id);
+        try {
+            await setDoc(userRef, UserConverter.toFirestore(user))
+        } catch(err) {
+            console.error("Error create user:", err);
+            throw err;
         }
     }
 

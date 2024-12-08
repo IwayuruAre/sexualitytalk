@@ -9,6 +9,10 @@ export class UserRepository implements IUserRepository {
         this.firestoreUserReposiroty = new FirestoreUserReposiroty();
     }
 
+    public create(user: User): Promise<void> {
+        return this.firestoreUserReposiroty.create(user);
+    }
+
     public findById(userId: string): Promise<User | null> {
         return this.firestoreUserReposiroty.findUserById(userId);
     }
