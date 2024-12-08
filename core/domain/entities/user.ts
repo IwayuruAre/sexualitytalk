@@ -111,14 +111,6 @@ export class User {
     public updatePhotos(photos: string[]): void {
         this._photos = photos;
     }
-
-    public updateCreatedAt(cretaedAt: Date) {
-        this._createdAt = cretaedAt;
-    }
-
-    public updateUpdatedAt(updatedAt: Date) {
-        this._updatedAt = updatedAt;
-    }
     //#endregion  編集可能フィールド
 
     private validate(): void {
