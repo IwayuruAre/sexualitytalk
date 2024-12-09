@@ -25,7 +25,7 @@ export class FirestoreUserReposiroty {
         }
     }
 
-    public async update(userId: string, updateFields: Partial<Record<keyof User, unknown>>): Promise<void> {
+    public async update(userId: string, updateFields: Partial<User>): Promise<void> {
         const userRef = doc(db, "users", userId);
         try {
             await updateDoc(userRef, {
