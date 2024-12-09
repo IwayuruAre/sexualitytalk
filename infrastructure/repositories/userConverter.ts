@@ -1,4 +1,4 @@
-import { QueryDocumentSnapshot, DocumentData, Timestamp } from 'firebase/firestore';
+import { QueryDocumentSnapshot, DocumentData, Timestamp, serverTimestamp } from 'firebase/firestore';
 import { User } from "@/core/domain/entities/user";
 
 export class UserConverter {
@@ -32,8 +32,8 @@ export class UserConverter {
             profile: user.profile,
             photos: user.photos,
             chat_rooms: user.chatRooms,
-            created_at: user.createdAt ? Timestamp.fromDate(user.createdAt) : null,
-            updated_at: user.updatedAt ? Timestamp.fromDate(user.updatedAt) : null
+            created_at: user.createdAt ? Timestamp.fromDate(user.createdAt) : serverTimestamp(),
+            updated_at: user.updatedAt ? Timestamp.fromDate(user.updatedAt) : serverTimestamp()
         };
     }
 }
