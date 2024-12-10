@@ -9,12 +9,16 @@ export class UserRepository implements IUserRepository {
         this.firestoreUserReposiroty = new FirestoreUserReposiroty();
     }
 
-    public findById(userId: string): Promise<User | null> {
-        return this.firestoreUserReposiroty.findUserById(userId);
+    public create(user: User): Promise<void> {
+        return this.firestoreUserReposiroty.create(user);
     }
 
-    public save(user: User): Promise<void> {
-        return this.firestoreUserReposiroty.save(user);
+    public findById(userId: string): Promise<User | null> {
+        return this.firestoreUserReposiroty.findById(userId);
+    }
+
+    public update(userId: string, updateFields: Partial<User>): Promise<void> {
+        return this.firestoreUserReposiroty.update(userId, updateFields);
     }
 
 }
