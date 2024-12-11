@@ -5,6 +5,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --red: #FF0000;
+  --orange: #FF7F00;
+  --yellow: #FFFF00;
+  --green: #00FF00;
+  --blue: #0000FF;
+  --purple: #8B00FF;
+  --white: #FFFFFF;
+  --gray: #333333;
+  --light-gray: #F5F5F5;
+  --deep-ocean-blue: #006994;
+  --light-ocean-blue: #4ca1af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,8 +32,8 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--gray);
+  background-color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
 }
 

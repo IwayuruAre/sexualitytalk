@@ -1,71 +1,8 @@
-:root {
-    --red: #FF0000;
-    --orange: #FF7F00;
-    --yellow: #FFFF00;
-    --green: #00FF00;
-    --blue: #0000FF;
-    --purple: #8B00FF;
-    --white: #FFFFFF;
-    --gray: #333333;
-    --light-gray: #F5F5F5;
-    --deep-ocean-blue: #006994;
-    --light-ocean-blue: #4ca1af;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--gray);
-    background-color: var(--white);
-}
-
 .container {
     max-width: 1200px;
     max-height: 35px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-header {
-    /* background: linear-gradient(to right, var(--red), var(--orange), var(--yellow), var(--green), var(--blue), var(--purple)); */
-    padding: 0.7rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--deep-ocean-blue);
-    color: var(--white);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--white);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.login-btn {
-    background-color: var(--white);
-    color: var(--purple);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.login-btn:hover {
-    background-color: var(--light-gray);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 main {

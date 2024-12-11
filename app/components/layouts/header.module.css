@@ -1,0 +1,41 @@
+.header {
+    padding: 0.7rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--deep-ocean-blue);
+    color: var(--white);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    max-height: 35px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login__btn {
+    background-color: var(--white);
+    color: var(--purple);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.login__btn:hover {
+    background-color: var(--light-gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
