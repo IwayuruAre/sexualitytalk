@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "./components/layouts/header";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -25,10 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="ja">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Header/>
         {children}
       </body>
     </html>
