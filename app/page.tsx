@@ -1,11 +1,9 @@
 import './top.css';
-import Header from "./components/layouts/header";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <>
-      <Header />
       <main className="container">
         <h1>SexualityTalk</h1>
         <p className="catchphrase">恋も友情も、あなたのペースで</p>
