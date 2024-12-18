@@ -1,3 +1,5 @@
+import { Prefecture } from "./prefecture";
+import { Sex } from "./sex";
 import { UserOptions } from "./userOptions";
 
 export class User {
@@ -11,9 +13,9 @@ export class User {
         public readonly id: string,
         public readonly name: string,
         public readonly birth: Date,
-        public readonly sex: string,
+        public readonly sex: Sex,
         public readonly lgbt: string[],
-        public readonly prefecture: string,
+        public readonly prefecture: Prefecture,
         options: UserOptions = {}
     ) {
         this.chatRooms = options?.chatRooms || [];
@@ -45,12 +47,6 @@ export class User {
         }
         if (this.name === "") {
             throw new Error("name is required");
-        }
-        if (this.sex === "") {
-            throw new Error("sex is required");
-        }
-        if (this.prefecture === "") {
-            throw new Error("prefecture is required");
         }
         if (this.lgbt.length === 0) {
             throw new Error("lgbt is required");
